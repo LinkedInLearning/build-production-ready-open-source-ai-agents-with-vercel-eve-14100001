@@ -1,5 +1,5 @@
-# COURSENAME
-This is the repository for the LinkedIn Learning course `course-name`. The full course is available from [LinkedIn Learning][lil-course-url].
+# Build Production-Ready Open-Source AI Agents with Vercel eve
+This is the repository for the LinkedIn Learning course `Build Production-Ready Open-Source AI Agents with Vercel eve`. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![lil-thumbnail-url]
 
