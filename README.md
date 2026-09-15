@@ -5,44 +5,77 @@ This is the repository for the LinkedIn Learning course `Build Production-Ready 
 
 ## Course Description
 
-_See the readme file in the main branch for updated instructions and information._
+You have a bike that sits in the garage six days a week. Your neighbor needs a bike on Wednesday. Neither of you knows that. In this course, you build the bot that does.
+
+Using [eve](https://eve.dev), Vercel's open-source, filesystem-first framework for durable AI agents, you build a neighborhood gear-sharing agent from an empty folder to a deployment you can open on your phone. Along the way you learn how eve turns a directory into an agent, how to connect a model through Vercel AI Gateway, how to write instructions that keep a bot honest, how to give it a typed tool over real data, how to package a routine as a skill it loads only when needed, how to put a web chat on top of it, and how to deploy the whole thing to Vercel.
+
+The gear-sharing bot is fictional. Every neighbor, listing, and street in it is made up.
+
 ## Instructions
-This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
+This repository has a folder for each video in the course, named `CHAPTER#_MOVIE#`. As an example, the folder named `01_03` corresponds to the first chapter and the third video in that chapter. Each folder contains the code as it is at the **end** of that video. To follow along with a video, start from the previous video's folder and make the changes yourself; open the video's own folder to check your work or to catch up.
 
-## Branches
-The branches are structured to correspond to the videos in the course. The naming convention is `CHAPTER#_MOVIE#`. As an example, the branch named `02_03` corresponds to the second chapter and the third video in that chapter. 
-Some branches will have a beginning and an end state. These are marked with the letters `b` for "beginning" and `e` for "end". The `b` branch contains the code as it is at the beginning of the movie. The `e` branch contains the code as it is at the end of the movie. The `main` branch holds the final state of the code when in the course.
+| Folder | Video | Ends with |
+| ------ | ----- | --------- |
+| `01_01` | How eve builds AI agents from files | The project as `eve init` creates it |
+| `01_02` | Configure AI models with AI Gateway | Same code, plus `.env.example` for the model credential |
+| `01_03` | Configure agent instructions in eve | `agent/instructions.md` for the Maple Street Gear Share bot |
+| `01_04` | Create initial gear database | `agent/lib/gear.ts` with twelve listings |
+| `01_05` | Build AI agent tools with TypeScript and schemas | The `searchGear` helper and the `find_gear` tool |
+| `01_06` | Teach the agent a borrow routine with skills | `agent/skills/borrow-request/SKILL.md` |
+| `01_07` | Send a borrow request with a tool | `send_borrow_request`, a simulated send |
+| `01_08` | Give the agent a web chat | The Next.js web chat from `eve add channel/web` |
+| `01_09` | Deploy to Vercel | The finished project, with the channel opened for a public demo |
 
-When switching from one exercise files branch to the next after making changes to the files, you may get a message like this:
-
-    error: Your local changes to the following files would be overwritten by checkout:        [files]
-    Please commit your changes or stash them before you switch branches.
-    Aborting
-
-To resolve this issue:
-	
-    Add changes to git using this command: git add .
-	Commit changes using this command: git commit -m "some message"
+Each folder is a standalone eve project with its own `package.json`. Install and run inside the folder you are working in.
 
 ## Installing
 1. To use these exercise files, you must have the following installed:
-	- [list of requirements for course]
+	- [Node.js](https://nodejs.org) 24 or newer, which includes npm
+	- A [Vercel](https://vercel.com) account
+	- An AI Gateway API key, created in the Vercel dashboard under **AI Gateway → API Keys**. The second video walks through this.
 2. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like SourceTree.
-3. [Course-specific instructions]
+3. Change into the folder for the video you are on and install its dependencies:
+
+		cd 01_02
+		npm install
+
+4. Copy `.env.example` to `.env.local` and paste your AI Gateway key into it. `.env.local` is ignored by git; never commit it.
+
+		cp .env.example .env.local
+
+5. Run the agent:
+
+		npm run dev
+
+	Folders `01_01` through `01_07` open eve's terminal UI. Folders `01_08` and `01_09` also start the web chat; open the local URL the server prints.
+
+### Deploying
+
+The last folder deploys to Vercel with two commands run inside it:
+
+		npx eve link
+		npx eve deploy
+
+The deployed agent authenticates to AI Gateway through the linked project's own credentials, so no API key goes in Vercel.
+
+**The `01_09` channel is open on purpose.** Its `agent/channels/eve.ts` uses eve's `none()` policy so a public demo works without a login. Anyone with the URL can chat, and every chat spends your AI Gateway budget. Set a budget on your key before you deploy, and take the deployment down, or replace `none()` with a real auth check, when you are done. The [eve authentication guide](https://github.com/vercel/eve/blob/main/docs/guides/auth-and-route-protection.md) shows how.
+
+### Versions
+
+The projects were built and tested with eve 0.53.1. eve is under active development; if a newer version changes an API used here, the [eve documentation](https://eve.dev/docs) is the source of truth.
 
 ## Instructor
 
-Instructor name
+Eve Porcello
 
-Instructor description
+Software engineer, instructor, author, and co-founder of Moon Highway.
 
                             
 
-Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/).
+Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learning/instructors/eve-porcello).
 
 
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
 [lil-course-url]: https://www.linkedin.com/learning/
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
-
