@@ -4,7 +4,18 @@ This is the repository for the LinkedIn Learning course `Build Production-Ready 
 ![lil-thumbnail-url]
 
 ## Course Description
+<p>Move beyond simple AI assistants and build an agent that can access data, use tools, follow defined workflows, and interact with users.</p>
+<p>In this hands-on course, software developer and instructor Eve Porcello shows you how to build an AI agent with eve, using a neighborhood gear-sharing application as the project. Set up your agent and model, define its identity and behavior with instructions, connect it to application data, and create tools that let it retrieve information. Explore how skills guide multi-step workflows and add human-in-the-loop controls. Then connect your agent to a Next.js web experience and deploy it to Vercel.</p>
+<p>Along the way, see how these components fit together to turn an agent from a terminal prototype into an application users can interact with.</p>
 
+## Learning Objectives
+- Configure an eve agent and connect it to an AI model.
+- Define agent behavior with instructions.
+- Build tools that connect agents to application data.
+- Create skills for multi-step, human-in-the-loop workflows.
+- Integrate an agent with a web app and deploy it to Vercel.
+
+## Build
 You have a bike that sits in the garage six days a week. Your neighbor needs a bike on Wednesday. Neither of you knows that. In this course, you build the bot that does.
 
 Using [eve](https://eve.dev), Vercel's open-source, filesystem-first framework for durable AI agents, you build a neighborhood gear-sharing agent from an empty folder to a deployment you can open on your phone. Along the way you learn how eve turns a directory into an agent, how to connect a model through Vercel AI Gateway, how to write instructions that keep a bot honest, how to give it a typed tool over real data, how to package a routine as a skill it loads only when needed, how to put a web chat on top of it, and how to deploy the whole thing to Vercel.
@@ -77,4 +88,4 @@ Check out my other courses on [LinkedIn Learning](https://www.linkedin.com/learn
 [0]: # (Replace these placeholder URLs with actual course URLs)
 
 [lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4D0DAQFNUqHpMDtetA/learning-public-crop_675_1200/B4DaCm7ub4HsAc-/0/1789507069959?e=2147483647&v=beta&t=_LcqxL-B8tMHiBFjjjZqMnXk_IAubOfxB-D8pYsyu-M
