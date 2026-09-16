@@ -21,10 +21,9 @@ This repository has a folder for each video in the course, named `CHAPTER#_MOVIE
 | `01_03` | Configure agent instructions in eve | `agent/instructions.md` for the Maple Street Gear Share bot |
 | `01_04` | Create initial gear database | `agent/lib/gear.ts` with twelve listings |
 | `01_05` | Build AI agent tools with TypeScript and schemas | The `searchGear` helper and the `find_gear` tool |
-| `01_06` | Teach the agent a borrow routine with skills | `agent/skills/borrow-request/SKILL.md` |
-| `01_07` | Send a borrow request with a tool | `send_borrow_request`, a simulated send |
-| `01_08` | Give the agent a web chat | The Next.js web chat from `eve add channel/web` |
-| `01_09` | Deploy to Vercel | The finished project, with the channel opened for a public demo |
+| `01_06` | Build reusable AI agent skills in eve | `agent/skills/borrow-request/SKILL.md` |
+| `01_07` | Connect an AI agent to web chat | The Next.js web chat from `eve add channel/web` |
+| `01_08` | Deploy and monitor an AI agent on Vercel | The finished project, with the channel opened for a public demo |
 
 Each folder is a standalone eve project with its own `package.json`. Install and run inside the folder you are working in.
 
@@ -39,7 +38,7 @@ Each folder is a standalone eve project with its own `package.json`. Install and
 		cd 01_02
 		npm install
 
-4. Copy `.env.example` to `.env.local` and paste your AI Gateway key into it. `.env.local` is ignored by git; never commit it.
+4. Copy `.env.example` to `.env.local` and paste your AI Gateway key into it (or run `/model` in eve's terminal UI, as in the second video). `.env.local` is ignored by git; never commit it.
 
 		cp .env.example .env.local
 
@@ -47,7 +46,7 @@ Each folder is a standalone eve project with its own `package.json`. Install and
 
 		npm run dev
 
-	Folders `01_01` through `01_07` open eve's terminal UI. Folders `01_08` and `01_09` also start the web chat; open the local URL the server prints.
+	Folders `01_01` through `01_06` open eve's terminal UI. Folders `01_07` and `01_08` also start the web chat; open the local URL the server prints.
 
 ### Deploying
 
@@ -58,7 +57,7 @@ The last folder deploys to Vercel with two commands run inside it:
 
 The deployed agent authenticates to AI Gateway through the linked project's own credentials, so no API key goes in Vercel.
 
-**The `01_09` channel is open on purpose.** Its `agent/channels/eve.ts` uses eve's `none()` policy so a public demo works without a login. Anyone with the URL can chat, and every chat spends your AI Gateway budget. Set a budget on your key before you deploy, and take the deployment down, or replace `none()` with a real auth check, when you are done. The [eve authentication guide](https://github.com/vercel/eve/blob/main/docs/guides/auth-and-route-protection.md) shows how.
+**The `01_08` channel is open on purpose.** Its `agent/channels/eve.ts` uses eve's `none()` policy so a public demo works without a login. Anyone with the URL can chat, and every chat spends your AI Gateway budget. Set a budget on your key before you deploy, and take the deployment down, or replace `none()` with a real auth check, when you are done. The [eve authentication guide](https://github.com/vercel/eve/blob/main/docs/guides/auth-and-route-protection.md) shows how.
 
 ### Versions
 

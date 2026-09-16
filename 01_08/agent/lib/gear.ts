@@ -163,8 +163,3 @@ export function searchGear(query: string): GearListing[] {
     return terms.every((term) => fields.some((field) => field.includes(term)));
   });
 }
-
-/** Look up one listing by id. Used by tools that act on a specific item. */
-export function getGear(id: string): GearListing | undefined {
-  return gear.find((listing) => listing.id === id);
-}
