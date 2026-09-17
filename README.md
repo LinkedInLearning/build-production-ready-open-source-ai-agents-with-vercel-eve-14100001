@@ -1,5 +1,5 @@
 # Build Production-Ready Open-Source AI Agents with Vercel eve
-This is the repository for the LinkedIn Learning course `Build Production-Ready Open-Source AI Agents with Vercel eve`. The full course is available from [LinkedIn Learning][lil-course-url].
+This is the repository for the LinkedIn Learning course `Build Production-Ready Open-Source AI Agents with Vercel eve`. The full course is available from [LinkedIn Learning][https://www.linkedin.com/learning/build-production-ready-open-source-ai-agents-with-vercel-eve].
 
 ![lil-thumbnail-url]
 
